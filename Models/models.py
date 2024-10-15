@@ -1,5 +1,8 @@
 from datetime import datetime  
-from sqlalchemy import JSON, Boolean, Column, Integer, String, TIMESTAMP, ForeignKey, MetaData, Table
+from sqlalchemy import JSON, Boolean, Column, Integer, MetaData, String, TIMESTAMP, ForeignKey, Table
+from sqlalchemy.orm import declarative_base, relationship
+
+Base = declarative_base()
 
 metadata = MetaData()
 
@@ -24,4 +27,3 @@ user = Table(
     Column("is_superuser", Boolean, default=False, nullable=False),
     Column("is_verified", Boolean, default=False, nullable=False)
 )
-
